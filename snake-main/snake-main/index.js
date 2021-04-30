@@ -29,7 +29,7 @@ let yVelocity = 0;
 
 let score = 0;
 
-const gulpSound = new Audio("gulp.mp3");
+const eatSound = new Audio("eat.mp3");
 
 //game loop
 function drawGame() {
@@ -153,13 +153,13 @@ function checkAppleCollision() {
     appleY = Math.floor(Math.random() * tileCount);
     tailLength++;
     score++;
-    gulpSound.play();
+    eatSound.play();
   }
 }
 
 document.body.addEventListener("keydown", keyDown);
 
-function keyDown(event) {
+function keyDown(event) {//dette laver alle keybinds
   //up
   if (event.keyCode == 38 || event.keyCode == 87) {
     //87 is w

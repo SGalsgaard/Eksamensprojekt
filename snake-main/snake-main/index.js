@@ -29,7 +29,7 @@ let yVelocity = 0;
 
 let score = 0;
 
-const eatSound = new Audio("næ.mp3");
+const eatSound = new Audio("næ.mp3");//s heeeesssd
 
 //game loop
 function drawGame() {

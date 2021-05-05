@@ -29,7 +29,7 @@ let yVelocity = 0;
 
 let score = 0;
 
-const eatSound = new Audio("eat.mp3");
+const eatSound = new Audio("næ.mp3");
 
 //game loop
 function drawGame() {
@@ -159,7 +159,7 @@ function checkAppleCollision() {
 
 document.body.addEventListener("keydown", keyDown);
 
-function keyDown(event) {//dette laver alle keybinds
+function keyDown(event) {
   //up
   if (event.keyCode == 38 || event.keyCode == 87) {
     //87 is w

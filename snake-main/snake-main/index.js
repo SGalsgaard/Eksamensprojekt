@@ -11,7 +11,7 @@ class SnakePart {
 let speed = 7;
 
 let tileCount = 20;
-let tileSize = canvas.width / tileCount - 2;//sheeesh
+let tileSize = canvas.width / tileCount - 2;
 
 let headX = 10;
 let headY = 10;
@@ -29,9 +29,8 @@ let yVelocity = 0;
 
 let score = 0;
 
-const eatSound = new Audio("næ.mp3");//s heeeesssd
+const eatSound = new Audio("næ.mp3");
 
-//game loop
 function drawGame() {
   xVelocity = inputsXVelocity;
   yVelocity = inputsYVelocity;
@@ -67,7 +66,6 @@ function isGameOver() {
     return false;
   }
 
-  //walls
   if (headX < 0) {
     gameOver = true;
   } else if (headX === tileCount) {
@@ -98,7 +96,6 @@ function isGameOver() {
       gradient.addColorStop("0", " magenta");
       gradient.addColorStop("0.5", "blue");
       gradient.addColorStop("1.0", "red");
-      // Fill with gradient
       ctx.fillStyle = gradient;
 
       ctx.fillText("Game Over!", canvas.width / 6.5, canvas.height / 2);
@@ -128,9 +125,9 @@ function drawSnake() {
     ctx.fillRect(part.x * tileCount, part.y * tileCount, tileSize, tileSize);
   }
 
-  snakeParts.push(new SnakePart(headX, headY)); //put an item at the end of the list next to the head
+  snakeParts.push(new SnakePart(headX, headY));
   while (snakeParts.length > tailLength) {
-    snakeParts.shift(); // remove the furthet item from the snake parts if have more than our tail size.
+    snakeParts.shift();
   }
 
   ctx.fillStyle = "orange";
@@ -160,33 +157,25 @@ function checkAppleCollision() {
 document.body.addEventListener("keydown", keyDown);
 
 function keyDown(event) {
-  //up
   if (event.keyCode == 38 || event.keyCode == 87) {
-    //87 is w
     if (inputsYVelocity == 1) return;
     inputsYVelocity = -1;
     inputsXVelocity = 0;
   }
 
-  //down
   if (event.keyCode == 40 || event.keyCode == 83) {
-    // 83 is s
     if (inputsYVelocity == -1) return;
     inputsYVelocity = 1;
     inputsXVelocity = 0;
   }
 
-  //left
   if (event.keyCode == 37 || event.keyCode == 65) {
-    // 65 is a
     if (inputsXVelocity == 1) return;
     inputsYVelocity = 0;
     inputsXVelocity = -1;
   }
 
-  //right
   if (event.keyCode == 39 || event.keyCode == 68) {
-    //68 is d
     if (inputsXVelocity == -1) return;
     inputsYVelocity = 0;
     inputsXVelocity = 1;
